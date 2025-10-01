@@ -19,16 +19,16 @@ The project includes:
 
 ## 2️⃣ Create and activate a virtual environment
 python -m venv venv
-# Windows
+### Windows
 venv\Scripts\activate
-# Mac/Linux
+### Mac/Linux
 source venv/bin/activate
 
 ## 3️⃣ Install dependencies
 pip install -r requirements.txt
 
-### Usage
-## 🔹 1. Train the model
+## Usage
+### 🔹 1. Train the model
 
 Make sure data/reviews.csv exists with text and label columns.
 
@@ -39,13 +39,13 @@ This saves the model into:
 
 models/sentiment_pipeline.joblib
 
-## 🔹 2. Run the FastAPI backend
+### 🔹 2. Run the FastAPI backend
 
 Start the API server:
 
 uvicorn src.app:app --reload --port 8000
 
-## 🔹 3. Run the Streamlit UI
+### 🔹 3. Run the Streamlit UI
 streamlit run src/ui.py
 
 
