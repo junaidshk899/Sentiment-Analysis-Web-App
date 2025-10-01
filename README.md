@@ -17,3 +17,54 @@ The project includes:
 - Interactive web UI with Streamlit  
 - Beginner-friendly and extendable  
 
+## 2️⃣ Create and activate a virtual environment
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# Mac/Linux
+source venv/bin/activate
+
+## 3️⃣ Install dependencies
+pip install -r requirements.txt
+
+### Usage
+## 🔹 1. Train the model
+
+Make sure data/reviews.csv exists with text and label columns.
+
+python src/train.py
+
+
+This saves the model into:
+
+models/sentiment_pipeline.joblib
+
+## 🔹 2. Run the FastAPI backend
+
+Start the API server:
+
+uvicorn src.app:app --reload --port 8000
+
+## 🔹 3. Run the Streamlit UI
+streamlit run src/ui.py
+
+
+This launches a simple, interactive web app in your browser where you can enter text and see sentiment predictions.
+
+## 📊 Example Predictions
+
+Input: "This movie was absolutely amazing!"
+Output: Positive ✅
+
+Input: "The acting was horrible and boring."
+Output: Negative ❌
+
+## 🔮 Future Improvements
+
+Use larger datasets (IMDB, Yelp, Amazon Reviews) for better accuracy
+
+Deploy on cloud platforms (Heroku, Render, Hugging Face Spaces)
+
+Add a Neutral category for 3-class sentiment analysis
+
+Visualize training metrics and predictions in Streamlit
